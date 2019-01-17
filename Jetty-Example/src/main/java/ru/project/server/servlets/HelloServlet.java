@@ -32,7 +32,7 @@ public class HelloServlet extends BaseServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         DBHelper helper = DBHelper.getInstance();
         try (Connection connection = helper.getConnection()) {
-            helper.runQuery(connection, "SELECT * from ciustomers;", new ResultHandlet() {
+            helper.runQuery(connection, "SELECT * from customers;", new ResultHandlet() {
                 @Override
                 public void handle(ResultSet rs) throws SQLException {
                     rs.next();
